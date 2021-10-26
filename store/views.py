@@ -5,7 +5,20 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'store/index.html')
 
+def product(request):
+    pass
 
-#listing 
-"""def listing(request):
-    return render(request, 'store/listing.html')"""
+def service(request):
+    pass
+
+def checkout(request):
+    return render(request, 'store/checkout.html')
+
+def contact(request):
+    return render(request, 'store/contact.html')
+
+def cart(request):
+    return render(request, 'store/cart.html')
+
+def blog(request):
+    pass
