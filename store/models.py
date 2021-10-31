@@ -23,6 +23,8 @@ class Provider(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True)
+    description = models.TextField(default="pas de description")
+    #image
 
     def __str__(self):
         return self.name
@@ -31,9 +33,10 @@ class Tag(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=200, null=True)
+    #image
 
     def __str__(self):
-        return self.name
+        return self.name 
     
 
 class Product(models.Model): #Class produit
@@ -41,6 +44,7 @@ class Product(models.Model): #Class produit
     name = models.CharField(max_length=200, null=True)
     description = models.TextField(default="pas de description")
     price = models.FloatField()
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
     digital = models.BooleanField(default=False, null=True, blank=False) #pour dire que le produit est physique ou numérique
     provider = models.ManyToManyField(Provider)
     tags = models.ManyToManyField(Tag)

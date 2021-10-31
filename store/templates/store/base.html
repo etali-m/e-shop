@@ -120,13 +120,12 @@
 						<div class="search-bar-top">
 							<div class="search-bar">
 								<select>
-									<option selected="selected">All Category</option>
-									<option>watch</option>
-									<option>mobile</option>
-									<option>kid’s item</option>
+									<option selected="selected">Catégories</option>
+									<!-- on va créer un gabarit qui va recuperer les catégories dans la base de donnnée-->
+									{% include 'store/category_list.html' %}
 								</select>
 								<form>
-									<input name="search" placeholder="Search Products Here....." type="search">
+									<input name="search" placeholder="Cherchez un produit ici....." type="search">
 									<button class="btnn"><i class="ti-search"></i></button>
 								</form>
 							</div>
@@ -190,9 +189,8 @@
 									<div class="navbar-collapse">	
 										<div class="nav-inner">	
 											<ul class="nav main-menu menu navbar-nav">
-													<li class="active"><a href="{% url 'index' %}">Home</a></li>
-													<li><a href="{% url 'product' %}">Product</a></li>												
-													<li><a href="#">Service</a></li>
+													<li class="active"><a href="{% url 'index' %}">Accueil</a></li>							
+													<li><a href="{% url 'service' %}">Services</a></li>
 													<li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
 														<ul class="dropdown">
 															<li><a href="{% url 'cart' %}">Cart</a></li>
@@ -204,7 +202,7 @@
 															<li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
 														</ul>
 													</li>
-													<li><a href="{% url 'contact' %}">Contact Us</a></li>
+													<li><a href="{% url 'contact' %}">Contactez Nous</a></li>
 												</ul>
 										</div>
 									</div>
