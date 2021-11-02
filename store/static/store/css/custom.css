@@ -1,0 +1,8 @@
+.category__single-category{
+    display:inline-block;
+    width: 140px;
+    height: auto;
+    padding-bottom: 3px;
+    margin:10px;
+    border:1px solid gray;
+}

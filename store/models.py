@@ -33,11 +33,20 @@ class Tag(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=200, null=True)
+    slug = models.SlugField(null=True) # the slugfield would be use for details of a category localhost:8000/telephone
     #image
 
     def __str__(self):
         return self.name 
     
+
+class SubCategory(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    parent_category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
+    #image
+
+    def __str__(self):
+        return self.name
 
 class Product(models.Model): #Class produit
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default="uncategorized")

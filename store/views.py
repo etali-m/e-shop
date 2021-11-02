@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 import random
 
 from .models import *
@@ -22,6 +22,12 @@ def service(request):
     services = Service.objects.all()
     context = {'services': services, 'categories':categories}
     return render(request, 'store/services.html', context)
+
+def category(request, category_name):
+    category = get_object_or_404(Category, slug=category_name)
+    products = category.product_set.all()
+    context = {'category': category, 'products':products}
+    return render(request, 'store/category.html', context)
 
 def checkout(request):
     return render(request, 'store/checkout.html')
