@@ -24,9 +24,10 @@ def service(request):
     return render(request, 'store/services.html', context)
 
 def category(request, category_name):
-    category = get_object_or_404(Category, slug=category_name)
-    products = category.product_set.all()
-    context = {'category': category, 'products':products}
+    category = get_object_or_404(Category, slug=category_name) 
+    categories = Category.objects.all()
+    subcategories = category.subcategory_set.all()
+    context = {'category': category, 'subcategories':subcategories, 'categories':categories}
     return render(request, 'store/category.html', context)
 
 def checkout(request):

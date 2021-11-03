@@ -3,22 +3,45 @@
 
 {% block content %} 
 <div class="container">
+    store/ <b>{{ category.name }}</b>
+</div>
+<div class="container">
+    <div class="row text-center mt-4 mb-2 carousel owl-carousel">
+        {% for subcategory in subcategories %}
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 single-category-wrapper">
+                <div class="single-category">
+                    <div class="category-image">
+                        image ici
+                    </div>
+                    <div class="category-content">
+                        {{ subcategory.name }}
+                    </div>
+                </div>
+            </div> 
+        {% endfor %}
+    </div>
+
     <div class="row">
-        <div class="col-2">
-            <p>Bonjour tout le monde </p>
+        <div class="col-md-4">
+            <div class="category-list">
+                <h6>Catégories</h6> <br>
+                <ul class="side-list">
+                    {% for category in categories %}
+                        <li>
+                            {{ category.name }}
+                            <ul>
+                                {% for subcategory in category.subcategory_set.all %}
+                                    <li>{{ subcategory.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-        <div class="col-2">
-            <p>Bonjour tout le monde </p>
-        </div>
-        <div class="col-2">
-            <p>Bonjour tout le monde </p>
-        </div>
-        <div class="col-2">
-            <p>Bonjour tout le monde </p>
-        </div>
-        <div class="col-2">
-            <p>Bonjour tout le monde </p>
+        <div class="col-md-8">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptate alias, quae et molestias debitis beatae, repellat animi aliquid deserunt, praesentium voluptates reiciendis laudantium soluta magni? Rerum repellendus fugiat non.</p>
         </div>
     </div>
-</div>
+</div> <br><br>
 {% endblock %}

@@ -1,8 +1,16 @@
-.category__single-category{
-    display:inline-block;
-    width: 140px;
-    height: auto;
-    padding-bottom: 3px;
-    margin:10px;
-    border:1px solid gray;
+.category-content{
+    background-color: rgb(253, 115, 51);
+    color:white;
+    font-weight: bold;  
+    padding:8px;
+}
+.single-category{
+    box-shadow: 2px 2px 10px rgb(185, 185, 185);    
+} 
+.category-image{
+    padding:35%;
+}
+.single-category-wrapper{
+    max-width: 100%;
+    padding:0;
 }

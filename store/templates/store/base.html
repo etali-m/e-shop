@@ -343,5 +343,32 @@
 	<script src="{% static '/store/js/easing.js' %}"></script>
 	<!-- Active JS -->
 	<script src="{% static '/store/js/active.js' %}"></script>
+	<script>
+		$(".carousel").owlCarousel({
+			margin:10,
+			loop:true, 
+			autoplay:false,
+			autoplayTimeout:2000,
+			responsive:{
+				0:{
+					items:2,
+					nav:true
+				},
+				500:{
+					items:3,
+					nav:false
+				},
+				800:{
+					items:4,
+					nav:false
+				},
+				1000:{
+					items:5,
+					nav:true,
+					loop:false
+				}
+			},
+		});
+	</script>
 </body>
 </html>

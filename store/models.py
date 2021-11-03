@@ -49,7 +49,7 @@ class SubCategory(models.Model):
         return self.name
 
 class Product(models.Model): #Class produit
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, default="uncategorized")
+    category = models.ForeignKey(SubCategory, on_delete=models.CASCADE, default="uncategorized")
     name = models.CharField(max_length=200, null=True)
     description = models.TextField(default="pas de description")
     price = models.FloatField()
