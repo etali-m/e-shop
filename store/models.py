@@ -43,6 +43,7 @@ class Category(models.Model):
 class SubCategory(models.Model):
     name = models.CharField(max_length=200, null=True)
     parent_category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
+    slug = models.SlugField(null=True)
     #image
 
     def __str__(self):

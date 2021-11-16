@@ -3,7 +3,7 @@
 
 {% block content %} 
 <div class="container">
-    store/ <b>{{ category.name }}</b>
+    store/{{ category.name }}/<b>{{ subcategory.name }}</b>
 </div>
 <div class="container-fluid">
     <div class="row">
@@ -17,7 +17,7 @@
                                 <a href="{% url 'category' category_name=category.slug %}">{{ category.name }}</a>
                                 <ul>
                                     {% for subcategory in category.subcategory_set.all %}
-                                        <li><a href="{% url 'subcategory' category_name=category.slug subcategory_name=subcategory.slug %}">{{ subcategory.name }}</a></li>
+                                        <li>  <a href="{% url 'subcategory' category_name=category.slug  subcategory_name=subcategory.slug %}">{{ subcategory.name }}</a></li>
                                     {% endfor %}
                                 </ul>
                             </li>
@@ -26,26 +26,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
-            <div class="row text-center mt-4 mb-2 carousel owl-carousel">
-                {% for subcategory in subcategories %}
-                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 single-category-wrapper">
-                        <div class="single-category">
-                            <div class="category-image">
-                                image ici
-                            </div>
-                            <div class="category-content">
-                                {{ subcategory.name }}
-                            </div>
-                        </div>
-                    </div> 
-                {% endfor %}
-            </div>
-        
+        <div class="col-md-9"> 
             <div class="row"> 
-                <p>{{ message }}</p>
-                {% for subcategory in category.subcategory_set.all %}
-                    {% for product in subcategory.product_set.all %} 
+                    {% for product in products %}
                         <div class="col-xl-3 col-lg-4 col-md-4 col-6">
                             <div class="single-product">
                                 <div class="product-img">
@@ -71,8 +54,7 @@
                                 </div>
                             </div>
                         </div> 
-                    {% endfor %}
-                {% endfor %} 
+                    {% endfor %} 
             </div>
         </div>
     </div>

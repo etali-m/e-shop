@@ -14,3 +14,15 @@
     max-width: 100%;
     padding:0;
 }
+.category-list{
+    border: none;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    box-shadow: 0 0 4px 3px hsla(0,0%,50.2%,.2);
+}
+.side-list li {
+    margin-top: 5px;
+    color: rgb(148, 72, 1);
+}
